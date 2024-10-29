@@ -1,0 +1,84 @@
+Create an account
+
+{
+    "email": "account@amil.com",
+    "account_name": "Prem",
+    "website": "www.google.com"
+
+}
+
+Sample Account Record Inserted in DB
+
+{
+    "id": 4,
+    "email": "account@amil.com",
+    "account_id": "d62f21ac-7f0d-47d8-8b2e-2d2f4efc7bab",
+    "account_name": "Prem",
+    "app_secret_token": "8378ee76415446e792501f7e0f0d1886",
+    "website": "www.google.com"
+}
+
+
+
+
+
+Sample GET Destination Inserted in DB
+
+{
+    "id": 3,
+    "account_id": "d62f21ac-7f0d-47d8-8b2e-2d2f4efc7bab",
+    "url": "http://127.0.0.1:8000/get-create-accounts",
+    "http_method": "GET",
+    "headers": {
+        "Content-Type": "application/json",
+        "CL-X-TOKEN": "8378ee76415446e792501f7e0f0d1886"
+    }
+}
+
+Sample PUT Destination Inserted in DB 
+
+{
+    "id": 4,
+    "account_id": "d62f21ac-7f0d-47d8-8b2e-2d2f4efc7bab",
+    "url": "http://127.0.0.1:8000/get-delete-account",
+    "http_method": "PUT",
+    "headers": {
+        "Content-Type": "application/json",
+        "CL-X-TOKEN": "76169cc4b99146bf965dc2a2bb319f68"
+    }
+}
+
+
+
+Sample /server/incoming_data
+
+// Request Data
+ "headers": {
+        "Content-Type": "application/json",
+        "CL-X-TOKEN": "76169cc4b99146bf965dc2a2bb319f68"
+    }
+
+{
+    "account_name": "Deepakk"
+
+}
+
+
+
+// Sample Output
+{
+    "http://127.0.0.1:8000/get-create-accounts": [
+        {
+            "id": 4,
+            "email": "account@amil.com",
+            "account_id": "d62f21ac-7f0d-47d8-8b2e-2d2f4efc7bab",
+            "account_name": "Deepakk",
+            "app_secret_token": "8378ee76415446e792501f7e0f0d1886",
+            "website": "www.google.com"
+        }
+    ],
+    "http://127.0.0.1:8000/get-delete-account": {
+        "message": "Account updated successfully."
+    }
+}
+
